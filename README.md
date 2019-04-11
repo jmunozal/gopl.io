@@ -34,7 +34,6 @@ Based on Marko Luska _Kubernetes in action_
 ```
 gcloud auth login
 ```
-
 ## Create docker image
 
 in ch1/server3 folder
@@ -42,15 +41,6 @@ in ch1/server3 folder
 ```
 docker build -t klusty .
 ```
-
-## Create a k8s cluster
-
-Don't forget to remove it after your tests!
-
-```
-gcloud container clusters create klusty --num-nodes 3 --machine-type f1-micro --zone europe-west1-b
-```
-
 ## Push image to registry
 
 ```
@@ -70,7 +60,15 @@ fbb641a8b943: Pushed
 latest: digest: sha256:dff463b42166ec221267cff2639ca905295312c304dfa13a1a099ffa38575c10 size: 2420
 ```
 
-## Create replicationcontroller (you can start from here!)
+## Create a k8s cluster (you can start from here!)
+
+Don't forget to remove it after your tests!
+
+```
+gcloud container clusters create klusty --num-nodes 3 --machine-type f1-micro --zone europe-west1-b
+```
+
+## Create replicationcontroller 
 
 ```
 $kubectl run klusty --image jmunozal/klusty --port 8000 --generator=run/v1
