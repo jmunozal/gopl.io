@@ -70,7 +70,7 @@ fbb641a8b943: Pushed
 latest: digest: sha256:dff463b42166ec221267cff2639ca905295312c304dfa13a1a099ffa38575c10 size: 2420
 ```
 
-## Create replicationcontroller
+## Create replicationcontroller (you can start from here!)
 
 ```
 $kubectl run klusty --image jmunozal/klusty --port 8000 --generator=run/v1
